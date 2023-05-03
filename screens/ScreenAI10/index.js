@@ -8,16 +8,18 @@ const ProfileScreen = () => {
       <TouchableOpacity style={styles.backButton}>
         <Text style={styles.backButtonText}>Back</Text>
       </TouchableOpacity>
-      <View style={styles.profileContainer}>
+      <Pressable onPress={() => {
+      navigation.navigate("ScreenAI13");
+    }}><View style={styles.profileContainer}>
         <Image source={{
-        uri: 'https://dummyimage.com/200x200/000/fff'
-      }} style={styles.profileImage} />
+          uri: 'https://dummyimage.com/200x200/000/fff'
+        }} style={styles.profileImage} />
         <Pressable onPress={() => {
-        navigation.navigate("ScreenAI11");
-      }}><Text style={styles.profileName}>John Doe</Text></Pressable>
+          navigation.navigate("ScreenAI11");
+        }}><Text style={styles.profileName}>John Doe</Text></Pressable>
         <Text style={styles.profileAddress}>123 Main St, Anytown USA</Text>
         <Text style={styles.tandaCount}>Total Tandas Participated: 5</Text>
-      </View>
+      </View></Pressable>
     </View>;
 };
 
