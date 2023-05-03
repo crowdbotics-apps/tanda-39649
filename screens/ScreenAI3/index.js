@@ -40,7 +40,9 @@ const LoginScreen = () => {
         <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
           <Text style={styles.loginLabel}>Sign in</Text>
         </TouchableOpacity>
-        <Pressable><View style={styles.socialLoginContainer}>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI6");
+      }}><View style={styles.socialLoginContainer}>
           <TouchableOpacity style={styles.socialLoginButton} onPress={() => handleSocialLogin('google')}>
             <Image source={require('../assets/google.png')} style={styles.socialLoginIcon} />
           </TouchableOpacity>
@@ -51,12 +53,14 @@ const LoginScreen = () => {
             <Image source={require('../assets/facebook.png')} style={styles.socialLoginIcon} />
           </TouchableOpacity>
         </View></Pressable>
-        <View style={styles.signupContainer}>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI7");
+      }}><View style={styles.signupContainer}>
           <Text style={styles.signupLabel}>Don't have an account?</Text>
           <TouchableOpacity onPress={handleSignUp}>
             <Text style={styles.signupLink}>Sign up</Text>
           </TouchableOpacity>
-        </View>
+        </View></Pressable>
       </View>
     </View>;
 };
