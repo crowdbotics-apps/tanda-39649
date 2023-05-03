@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
+import { useState } from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 const images = [{
   id: 1,
@@ -18,6 +20,7 @@ const images = [{
 }];
 
 const ScreenComponent = () => {
+  const navigation = useNavigation();
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handlePrevious = () => {
@@ -48,7 +51,9 @@ const ScreenComponent = () => {
         </TouchableOpacity>
       </View>
       <TouchableOpacity style={styles.getStartedButton} onPress={handleGetStarted}>
-        <Text style={styles.getStartedButtonText}>Get Started</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI3");
+      }}><Text style={styles.getStartedButtonText}>Get Started</Text></Pressable>
       </TouchableOpacity>
     </View>;
 };
