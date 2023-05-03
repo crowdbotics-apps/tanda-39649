@@ -18,7 +18,9 @@ const ProfileScreen = () => {
   };
 
   return <View style={styles.container}>
-      <View style={styles.header}>
+      <Pressable onPress={() => {
+      navigation.navigate("ScreenAI10");
+    }}><View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Image source={require('./assets/back-arrow.png')} style={styles.backArrow} />
         </TouchableOpacity>
@@ -26,7 +28,7 @@ const ProfileScreen = () => {
         <TouchableOpacity onPress={handleSaveChanges}>
           <Text style={styles.headerButton}>Save</Text>
         </TouchableOpacity>
-      </View>
+      </View></Pressable>
       <View style={styles.profilePictureContainer}>
         <Image source={profilePicture} style={styles.profilePicture} />
         <TouchableOpacity>
