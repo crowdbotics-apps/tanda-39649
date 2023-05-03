@@ -1,7 +1,9 @@
-import React from 'react';
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 
 const ProfileScreen = () => {
+  const navigation = useNavigation();
   return <View style={styles.container}>
       <TouchableOpacity style={styles.backButton}>
         <Text style={styles.backButtonText}>Back</Text>
@@ -10,7 +12,9 @@ const ProfileScreen = () => {
         <Image source={{
         uri: 'https://dummyimage.com/200x200/000/fff'
       }} style={styles.profileImage} />
-        <Text style={styles.profileName}>John Doe</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI11");
+      }}><Text style={styles.profileName}>John Doe</Text></Pressable>
         <Text style={styles.profileAddress}>123 Main St, Anytown USA</Text>
         <Text style={styles.tandaCount}>Total Tandas Participated: 5</Text>
       </View>
