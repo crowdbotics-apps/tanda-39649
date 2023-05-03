@@ -1,10 +1,14 @@
-import React from 'react';
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 const ScreenComponent = () => {
+  const navigation = useNavigation();
   return <View style={styles.container}>
       <Image source={require('../assets/image.png')} style={styles.image} />
-      <Text style={styles.message}>Custom message goes here</Text>
+      <Pressable onPress={() => {
+      navigation.navigate("ScreenAI12");
+    }}><Text style={styles.message}>Custom message goes here</Text></Pressable>
       <TouchableOpacity style={styles.applyButton}>
         <Text style={styles.buttonText}>Apply</Text>
       </TouchableOpacity>
