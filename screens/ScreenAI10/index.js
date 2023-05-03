@@ -1,12 +1,16 @@
-import React from 'react';
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import { View, Text, StyleSheet, Image } from 'react-native';
 
 const TandaScreen = () => {
+  const navigation = useNavigation();
   return <View style={styles.container}>
       <Image source={{
       uri: 'https://dummyimage.com/300x300/000/fff'
     }} style={styles.image} />
-      <Text style={styles.title}>Tanda Title</Text>
+      <Pressable onPress={() => {
+      navigation.navigate("ScreenAI9");
+    }}><Text style={styles.title}>Tanda Title</Text></Pressable>
       <Text style={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sapien vel bibendum bibendum, velit sapien bibendum sapien, vel bibendum sapien velit.</Text>
       <View style={styles.infoContainer}>
         <Text style={styles.info}>Period: 1 month</Text>
