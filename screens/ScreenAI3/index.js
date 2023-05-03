@@ -35,7 +35,9 @@ const LoginScreen = () => {
           <Text style={styles.checkboxLabel}>Remember me</Text>
         </View></Pressable>
         <TouchableOpacity style={styles.forgotPasswordButton} onPress={handleForgotPassword}>
-          <Text style={styles.forgotPasswordLabel}>Forgot password?</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("Terms and Conditions");
+        }}><Text style={styles.forgotPasswordLabel}>Forgot password?</Text></Pressable>
         </TouchableOpacity>
         <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
           <Text style={styles.loginLabel}>Sign in</Text>
