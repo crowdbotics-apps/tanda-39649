@@ -20,14 +20,16 @@ const ApplyScreen = () => {
         {
           /* Dropdown 1 */
         }
-        <View style={styles.dropdown}>
+        <Pressable onPress={() => {
+          navigation.navigate("ScreenAI10");
+        }}><View style={styles.dropdown}>
           <Text style={styles.dropdownLabel}>Option 1</Text>
           <View style={styles.dropdownSelect}>
             {
-              /* Dropdown options */
-            }
+                /* Dropdown options */
+              }
           </View>
-        </View>
+        </View></Pressable>
 
         {
           /* Dropdown 2 */
