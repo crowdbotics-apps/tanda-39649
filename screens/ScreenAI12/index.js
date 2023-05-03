@@ -1,13 +1,15 @@
-import React from 'react';
+import { Pressable } from "react-native";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 const PackageScreen = ({
   navigation
 }) => {
   return <View style={styles.container}>
-      <View style={styles.header}>
+      <Pressable onPress={() => {
+      navigation.navigate("ScreenAI14");
+    }}><View style={styles.header}>
         <Text style={styles.headerText}>Choose a Package</Text>
-      </View>
+      </View></Pressable>
       <View style={styles.package}>
         <Image source={require('../assets/package.png')} style={styles.packageImage} />
         <View style={styles.packageDetails}>
