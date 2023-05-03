@@ -11,7 +11,7 @@ const TandaScreen = () => {
       <Pressable onPress={() => {
       navigation.navigate("ScreenAI9");
     }}><Text style={styles.title}>Tanda Title</Text></Pressable>
-      <Text style={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sapien vel bibendum bibendum, velit sapien bibendum sapien, vel bibendum sapien velit.</Text>
+      <Pressable><Text style={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sapien vel bibendum bibendum, velit sapien bibendum sapien, vel bibendum sapien velit.</Text></Pressable>
       <View style={styles.infoContainer}>
         <Text style={styles.info}>Period: 1 month</Text>
         <Text style={styles.info}>Participants: 5</Text>
