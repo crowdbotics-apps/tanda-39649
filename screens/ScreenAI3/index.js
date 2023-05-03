@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
+import { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet } from 'react-native';
 
 const LoginScreen = () => {
+  const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
@@ -15,7 +18,7 @@ const LoginScreen = () => {
   const handleSignUp = () => {// handle sign up logic
   };
 
-  const handleSocialLogin = provider => {// handle social login logic
+  const handleSocialLogin = () => {// handle social login logic
   };
 
   return <View style={styles.container}>
@@ -23,12 +26,14 @@ const LoginScreen = () => {
       <View style={styles.inputContainer}>
         <TextInput style={styles.input} placeholder="Email" value={email} onChangeText={setEmail} />
         <TextInput style={styles.input} placeholder="Password" secureTextEntry value={password} onChangeText={setPassword} />
-        <View style={styles.checkboxContainer}>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI4");
+      }}><View style={styles.checkboxContainer}>
           <TouchableOpacity style={styles.checkbox} onPress={() => setRememberMe(!rememberMe)}>
             {rememberMe && <Image source={require('../assets/check.png')} style={styles.checkIcon} />}
           </TouchableOpacity>
           <Text style={styles.checkboxLabel}>Remember me</Text>
-        </View>
+        </View></Pressable>
         <TouchableOpacity style={styles.forgotPasswordButton} onPress={handleForgotPassword}>
           <Text style={styles.forgotPasswordLabel}>Forgot password?</Text>
         </TouchableOpacity>
