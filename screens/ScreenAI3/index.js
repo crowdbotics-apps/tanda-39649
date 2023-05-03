@@ -56,7 +56,7 @@ const LoginScreen = () => {
           </TouchableOpacity>
         </View></Pressable>
         <Pressable onPress={() => {
-        navigation.navigate("ScreenAI7");
+        navigation.navigate("ScreenAI10");
       }}><View style={styles.signupContainer}>
           <Text style={styles.signupLabel}>Don't have an account?</Text>
           <TouchableOpacity onPress={handleSignUp}>
