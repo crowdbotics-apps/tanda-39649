@@ -40,7 +40,7 @@ const LoginScreen = () => {
         <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
           <Text style={styles.loginLabel}>Sign in</Text>
         </TouchableOpacity>
-        <View style={styles.socialLoginContainer}>
+        <Pressable><View style={styles.socialLoginContainer}>
           <TouchableOpacity style={styles.socialLoginButton} onPress={() => handleSocialLogin('google')}>
             <Image source={require('../assets/google.png')} style={styles.socialLoginIcon} />
           </TouchableOpacity>
@@ -50,7 +50,7 @@ const LoginScreen = () => {
           <TouchableOpacity style={styles.socialLoginButton} onPress={() => handleSocialLogin('facebook')}>
             <Image source={require('../assets/facebook.png')} style={styles.socialLoginIcon} />
           </TouchableOpacity>
-        </View>
+        </View></Pressable>
         <View style={styles.signupContainer}>
           <Text style={styles.signupLabel}>Don't have an account?</Text>
           <TouchableOpacity onPress={handleSignUp}>
