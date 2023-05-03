@@ -1,67 +1,17 @@
-import { useNavigation } from "@react-navigation/native";
-import { Pressable } from "react-native";
-import { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { View, Text, StyleSheet, Image } from 'react-native';
 
-const ApplyScreen = () => {
-  const navigation = useNavigation();
-  const [selectedOption1, setSelectedOption1] = useState('');
-  const [selectedOption2, setSelectedOption2] = useState('');
-  const [selectedOption3, setSelectedOption3] = useState('');
-  const [isButtonActive, setIsButtonActive] = useState(false);
-
-  const handleApplyPress = () => {// Navigate to Generated Tanda screen
-  };
-
+const TandaScreen = () => {
   return <View style={styles.container}>
-      <Pressable onPress={() => {
-      navigation.navigate("ScreenAI9");
-    }}><View style={styles.dropdownContainer}>
-        {
-          /* Dropdown 1 */
-        }
-        <Pressable onPress={() => {
-          navigation.navigate("ScreenAI10");
-        }}><View style={styles.dropdown}>
-          <Text style={styles.dropdownLabel}>Option 1</Text>
-          <View style={styles.dropdownSelect}>
-            {
-                /* Dropdown options */
-              }
-          </View>
-        </View></Pressable>
-
-        {
-          /* Dropdown 2 */
-        }
-        <View style={styles.dropdown}>
-          <Text style={styles.dropdownLabel}>Option 2</Text>
-          <View style={styles.dropdownSelect}>
-            {
-              /* Dropdown options */
-            }
-          </View>
-        </View>
-
-        {
-          /* Dropdown 3 */
-        }
-        <View style={styles.dropdown}>
-          <Text style={styles.dropdownLabel}>Option 3</Text>
-          <View style={styles.dropdownSelect}>
-            {
-              /* Dropdown options */
-            }
-          </View>
-        </View>
-      </View></Pressable>
-
-      {
-      /* Apply button */
-    }
-      <TouchableOpacity style={[styles.button, isButtonActive ? styles.activeButton : styles.inactiveButton]} onPress={handleApplyPress} disabled={!isButtonActive}>
-        <Text style={styles.buttonText}>Apply</Text>
-      </TouchableOpacity>
+      <Image source={{
+      uri: 'https://dummyimage.com/300x300/000/fff'
+    }} style={styles.image} />
+      <Text style={styles.title}>Tanda Title</Text>
+      <Text style={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sapien vel bibendum bibendum, velit sapien bibendum sapien, vel bibendum sapien velit.</Text>
+      <View style={styles.infoContainer}>
+        <Text style={styles.info}>Period: 1 month</Text>
+        <Text style={styles.info}>Participants: 5</Text>
+      </View>
     </View>;
 };
 
@@ -72,40 +22,27 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#fff'
   },
-  dropdownContainer: {
-    flexDirection: 'row',
+  image: {
+    width: 200,
+    height: 200,
+    borderRadius: 100,
     marginBottom: 20
   },
-  dropdown: {
-    marginRight: 20
-  },
-  dropdownLabel: {
-    fontSize: 16,
+  title: {
+    fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 10
   },
-  dropdownSelect: {
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 5,
-    padding: 10
+  description: {
+    textAlign: 'center',
+    marginHorizontal: 20,
+    marginBottom: 20
   },
-  button: {
-    backgroundColor: '#ccc',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 5
+  infoContainer: {
+    flexDirection: 'row'
   },
-  activeButton: {
-    backgroundColor: '#007AFF'
-  },
-  inactiveButton: {
-    backgroundColor: '#ccc'
-  },
-  buttonText: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: 'bold'
+  info: {
+    marginRight: 20
   }
 });
-export default ApplyScreen;
+export default TandaScreen;
